@@ -10,5 +10,5 @@ device = sh1106(serial)
 with canvas(device) as draw:
     draw.rectangle(device.bounding_box, outline="white", fill="black")
     draw.text((10, 40), "Hello World", fill="white")
-    draw.fill('white')
+    draw.rounded_rectangle(device.bounding_box, outline="white", fill="black")
 sleep(10)
