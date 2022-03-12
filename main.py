@@ -8,7 +8,6 @@ device = sh1106(serial)
 
 # Box and text rendered in portrait mode
 with canvas(device) as draw:
-    draw.rectangle(device.bounding_box, outline="white", fill="black")
-    draw.text((10, 40), "Hello World", fill="white")
-    draw.rounded_rectangle(device.bounding_box, outline="white", fill="black")
+    draw.rectangle((10, 10, 30, 30), outline="white", fill="red")
+
 sleep(10)
