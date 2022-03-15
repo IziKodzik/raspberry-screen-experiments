@@ -8,9 +8,10 @@ device = sh1106(serial)
 
 # Box and text rendered in portrait mode
 print("Whooot")
-while True:
+w = 100
+while w > 0:
+    w = w-1
     with canvas(device) as draw:
-        for i in range(0, 60):
-            draw.rectangle((30 + i, 30, 60 + i, 60), outline="white", fill="red")
-            sleep(0.1)
+        draw.rectangle((30 + w, 30, 60 + w, 60), outline="white", fill="red")
+    sleep(0.1)
 sleep(10)
