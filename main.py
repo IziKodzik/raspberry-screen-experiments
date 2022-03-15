@@ -7,9 +7,8 @@ serial = i2c(port=1, address=0x3C)
 device = sh1106(serial)
 
 # Box and text rendered in portrait mode
+print("Whooot")
 with canvas(device) as draw:
     draw.rectangle((30, 30, 60, 60), outline="white", fill="red")
-    sleep(5)
-    device.clear()
 
 sleep(10)
