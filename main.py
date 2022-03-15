@@ -13,6 +13,6 @@ w = 100
 #     w = w - 1
 with canvas(device) as draw:
     # draw.rectangle((0, 0, 127, 63), fill='white', outline='white', width=1)
-    draw.ellipse((10, 10, 15, 15), fill='white', outline='white')
+    draw.ellipse((10, 10, 20, 20), fill='white', outline='white')
     # sleep(0.1)
-sleep(1)
+sleep(10)
