@@ -12,6 +12,6 @@ w = 100
 while w > 0:
     w = w - 1
     with canvas(device) as draw:
-        draw.rounded_rectangle((0, 0, 30, 30), fill='black', outline='white', width=4)
+        draw.rectangle((0, 0, 30, 30), fill='black', outline='white', width=4)
     sleep(0.1)
 sleep(10)
