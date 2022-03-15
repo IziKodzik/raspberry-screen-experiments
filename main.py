@@ -14,5 +14,6 @@ w = 100
 with canvas(device) as draw:
     # draw.rectangle((0, 0, 127, 63), fill='white', outline='white', width=1)
     draw.ellipse((10, 10, 20, 20), fill='white', outline='white')
+    draw.line((100,40, 150, 60), fill='black', width=1)
     # sleep(0.1)
 sleep(10)
