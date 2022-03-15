@@ -10,8 +10,8 @@ device = sh1106(serial)
 print("Whooot")
 w = 100
 while w > 0:
-    w = w-1
+    w = w - 1
     with canvas(device) as draw:
-        draw.rectangle((30 + w, 30, 60 + w, 60), outline="white", fill="red")
+        draw.rounded_rectangle((0, 0, 30, 30), fill='black', outline='white', width=4)
     sleep(0.1)
 sleep(10)
