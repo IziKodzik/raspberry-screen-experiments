@@ -11,7 +11,7 @@ print("Whooot")
 with canvas(device) as draw:
     for i in range(0, 60):
         draw.rectangle((30 + i, 30, 60 + i, 60), outline="white", fill="red")
-        sleep(0.01)
+        sleep(1)
         device.clear()
         device.cleanup()
 sleep(10)
