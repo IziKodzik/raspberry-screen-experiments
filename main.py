@@ -9,10 +9,10 @@ device = sh1106(serial)
 # Box and text rendered in portrait mode
 print("Whooot")
 w = 100
-while w > 0:
-    w = w - 1
-    with canvas(device) as draw:
-        # draw.rectangle((0, 0, 127, 63), fill='white', outline='white', width=1)
-        draw.ellipse((10, 10, 15, 15), fill='white', outline='white')
-    sleep(0.1)
-sleep(10)
+# while w > 0:
+#     w = w - 1
+with canvas(device) as draw:
+    # draw.rectangle((0, 0, 127, 63), fill='white', outline='white', width=1)
+    draw.ellipse((10, 10, 15, 15), fill='white', outline='white')
+    # sleep(0.1)
+sleep(1)
