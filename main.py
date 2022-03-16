@@ -1,10 +1,11 @@
 from pathlib import Path
 
-from PIL.Image import Image
 from luma.core.interface.serial import i2c
 from luma.core.render import canvas
 from luma.oled.device import sh1106
 from time import sleep
+from PIL import Image
+
 
 serial = i2c(port=1, address=0x3C)
 device = sh1106(serial)
