@@ -16,7 +16,7 @@ w = 100
 # while w > 0:
 #     w = w - 1
 with canvas(device) as draw:
-    background = Image.new(device.mode, device.size, 'white')
+    background = Image.new(device.mode, device.size, 'black')
     img_path = str(Path(__file__).resolve().parent.joinpath('images', 'eyes.png'))
     logo = Image.open(img_path).convert("RGBA")
     background.paste(logo,(0,0))
