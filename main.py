@@ -12,11 +12,12 @@ w = 100
 # while w > 0:
 #     w = w - 1
 with canvas(device) as draw:
-    # draw.rectangle((0, 0, 127, 63), fill='white', outline='white', width=1)
     draw.ellipse((10, 10, 20, 20), fill='white', outline='white')
     draw.ellipse((10, 30, 20, 40), fill='white', outline='white')
     draw.ellipse((20, 10, 30, 20), fill='white', outline='white')
     draw.ellipse((20, 30, 30, 40), fill='white', outline='white')
     draw.rectangle((10, 15, 30, 35), fill='white', width=1)
+    # draw.rectangle()
     # sleep(0.1)
-sleep(10)
+while True:
+    pass
