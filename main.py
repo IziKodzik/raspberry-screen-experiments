@@ -17,7 +17,7 @@ with canvas(device) as draw:
     draw.ellipse((20, 10, 30, 20), fill='white', outline='white')
     draw.ellipse((20, 30, 30, 40), fill='white', outline='white')
     draw.rectangle((10, 15, 30, 35), fill='white', width=1)
-    draw.rectangle((15, 10, 13, 35), fill='white', outline='white')
+    draw.rectangle((15, 10, 35, 13), fill='white', outline='white')
     # draw.rectangle()
     # sleep(0.1)
 while True:
