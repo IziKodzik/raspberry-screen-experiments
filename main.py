@@ -23,4 +23,8 @@ with canvas(device) as draw:
     posn = ((device.width - logo.width) // 2, 0)
 
     while True:
-        device.display(background.convert(device.mode))
+        for angle in range(0, 360, 2):
+            rot = logo.rotate(angle, resample=Image.BILINEAR)
+            img = Image.composite(0, fff, rot)
+            background.paste(img, posn)
+            device.display(background.convert(device.mode))
