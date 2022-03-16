@@ -1,3 +1,6 @@
+from pathlib import Path
+
+from PIL.Image import Image
 from luma.core.interface.serial import i2c
 from luma.core.render import canvas
 from luma.oled.device import sh1106
@@ -12,14 +15,13 @@ w = 100
 # while w > 0:
 #     w = w - 1
 with canvas(device) as draw:
-    draw.ellipse((10, 10, 20, 20), fill='white', outline='white')
-    draw.ellipse((10, 30, 20, 40), fill='white', outline='white')
-    draw.ellipse((20, 10, 30, 20), fill='white', outline='white')
-    draw.ellipse((20, 30, 30, 40), fill='white', outline='white')
-    draw.rectangle((10, 15, 30, 35), fill='white', width=1)
-    draw.rectangle((15, 10, 25, 13), fill='white', outline='white')
-    draw.rectangle((15, 37, 25, 40), fill='white', outline='white')
-    # draw.rectangle()
-    # sleep(0.1)
+    img_path = str(Path(__file__).resolve().parent.joinpath('images', 'eyes.png'))
+    logo = Image.open(img_path).convert("RGBA")
+    fff = Image.new(logo.mode, logo.size, (255,) * 4)
+
+    background = Image.new("RGBA", device.size, "white")
+    posn = ((device.width - logo.width) // 2, 0)
+    device.display(background.convert(device.mode))
+
 while True:
     pass
