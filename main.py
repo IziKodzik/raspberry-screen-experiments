@@ -19,10 +19,8 @@ with canvas(device) as draw:
     img_path = str(Path(__file__).resolve().parent.joinpath('images', 'eyes.png'))
     logo = Image.open(img_path).convert("RGBA")
     fff = Image.new(logo.mode, logo.size, (255,) * 4)
-
     background = Image.new("RGBA", device.size, "white")
     posn = ((device.width - logo.width) // 2, 0)
-    device.display(background.convert(device.mode))
 
-while True:
-    pass
+    while True:
+        device.display(background.convert(device.mode))
