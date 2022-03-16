@@ -6,7 +6,6 @@ from luma.oled.device import sh1106
 from time import sleep
 from PIL import Image
 
-
 serial = i2c(port=1, address=0x3C)
 device = sh1106(serial)
 
@@ -19,7 +18,13 @@ with canvas(device) as draw:
     background = Image.new(device.mode, device.size, 'black')
     img_path = str(Path(__file__).resolve().parent.joinpath('images', 'eyes.png'))
     logo = Image.open(img_path).convert("RGBA")
-    background.paste(logo,(0,0))
+    background.paste(logo, (0, 0))
     while True:
         device.display(background)
+        sleep(1)
+        background = Image.new(device.mode, device.size, 'black')
+        img_path1 = str(Path(__file__).resolve().parent.joinpath('images', 'close.png'))
+        logo2 = Image.open(img_path1).convert('RGBA')
+        background.paste(logo2, (0, 0))
+        sleep(1)
 
