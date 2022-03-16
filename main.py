@@ -19,12 +19,11 @@ with canvas(device) as draw:
     img_path = str(Path(__file__).resolve().parent.joinpath('images', 'eyes.png'))
     logo = Image.open(img_path).convert("RGBA")
     fff = Image.new(logo.mode, logo.size, (255,) * 4)
-    background = Image.new("RGBA", device.size, "white")
+    background = Image.new("RGBA", device.size, "black")
+    img = Image.composite(logo, fff)
     posn = ((device.width - logo.width) // 2, 0)
-
     while True:
-        for angle in range(0, 360, 2):
-            rot = logo.rotate(angle, resample=Image.BILINEAR)
-            img = Image.composite(0, fff, rot)
-            background.paste(img, posn)
-            device.display(background.convert(device.mode))
+
+        background.paste(img, posn)
+        device.display(img.convert(device.mode))
+
