@@ -11,6 +11,6 @@ device = sh1106(serial)
 print("Whooot")
 w = 100
 with canvas(device) as draw:
-    draw.rectangle((0, 0, 124, 64), fill='brown', width=1)
+    draw.rectangle((0, 0, 124, 64), fill='blue', width=1)
 
 sleep(5)
