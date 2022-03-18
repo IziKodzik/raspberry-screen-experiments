@@ -1,30 +1,16 @@
 from pathlib import Path
+from time import sleep
 
 from luma.core.interface.serial import i2c
 from luma.core.render import canvas
 from luma.oled.device import sh1106
-from time import sleep
-from PIL import Image
 
 serial = i2c(port=1, address=0x3C)
 device = sh1106(serial)
 
-# Box and text rendered in portrait mode
 print("Whooot")
 w = 100
-# while w > 0:
-#     w = w - 1
 with canvas(device) as draw:
-    background = Image.new(device.mode, device.size, 'black')
-    img_path = str(Path(__file__).resolve().parent.joinpath('images', 'eyes.png'))
-    logo = Image.open(img_path).convert("RGBA")
-    background.paste(logo, (0, 0))
-    while True:
-        device.display(background)
-        sleep(1)
-        background = Image.new(device.mode, device.size, 'black')
-        img_path1 = str(Path(__file__).resolve().parent.joinpath('images', 'close.png'))
-        logo2 = Image.open(img_path1).convert('RGBA')
-        background.paste(logo2, (0, 0))
-        sleep(1)
+    draw.rectangle((0, 0, 124, 64), fill='white', width=1)
 
+sleep(5)
