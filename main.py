@@ -8,12 +8,10 @@ from luma.oled.device import sh1106
 serial = i2c(port=1, address=0x3C)
 device = sh1106(serial)
 
-print("Whooot")
-w = 100
-step = 0
-while step < 100:
-    with canvas(device) as draw:
-        draw.rectangle((0 + step, 0 + step/4, 20 + step, 20 + step/4), fill='blue', width=1)
-    step += 20
-    sleep(0.5)
-sleep(5)
+print("Starting program...")
+with canvas(device) as draw:
+    draw.arc((0, 0, 20, 20), 20, 20, fill='white', width=1)
+
+while True:
+    pass
+print('Ending program.')
