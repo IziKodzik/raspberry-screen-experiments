@@ -10,7 +10,9 @@ device = sh1106(serial)
 
 print("Whooot")
 w = 100
-with canvas(device) as draw:
-    draw.rectangle((0, 0, 124, 64), fill='blue', width=1)
-
+step = 0
+while step < 100:
+    with canvas(device) as draw:
+        draw.rectangle((0 + step, 0 + step/4, 20 + step, 20 + step/4), fill='blue', width=1)
+    sleep(0.1)
 sleep(5)
