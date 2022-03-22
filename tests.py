@@ -13,7 +13,7 @@ def main():
 
     # create rectangle image
     draw = ImageDraw.Draw(img)
-    draw.rounded_rectangle((0, 0, 30, 30), 10, 'white')
+    draw.rectangle((1, 1, 2, 2), 'white')
     # draw_rounded_rectangle(draw)
     img.show()
 

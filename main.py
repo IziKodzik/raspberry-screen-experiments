@@ -10,7 +10,9 @@ device = sh1106(serial)
 
 print("Starting program...")
 with canvas(device) as draw:
-    draw.rounded_rectangle((20, 10, 40, 40), 7, 'white')
+    draw.rectangle((1, 1, 2, 2), 'whie')
+    # draw.rounded_rectangle((20, 10, 40, 40), 7, 'white')
+    # draw.rounded_rectangle((100, 10, ))
 device.show()
 while True:
     pass
