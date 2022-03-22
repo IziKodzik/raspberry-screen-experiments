@@ -10,8 +10,7 @@ device = sh1106(serial)
 
 print("Starting program...")
 with canvas(device) as draw:
-    draw.arc((0, 0, 20, 20), 20, 20, fill='white', width=1)
-
+    draw.rounded_rectangle((0, 0, 20, 20), 15, 'black')
 while True:
     pass
 print('Ending program.')
